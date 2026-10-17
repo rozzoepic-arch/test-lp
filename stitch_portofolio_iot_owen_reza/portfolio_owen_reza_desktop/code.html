@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Owen Reza // EE.Lab — Portofolio IoT &amp; Telekomunikasi</title>
+<!-- Google Fonts: Inter & JetBrains Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "outline": "#859397",
+            "on-secondary": "#003351",
+            "error-container": "#93000a",
+            "tertiary-fixed-dim": "#4edea3",
+            "surface-dim": "#0c1321",
+            "surface-bright": "#323949",
+            "on-tertiary-fixed": "#002113",
+            "on-error": "#690005",
+            "secondary": "#93ccff",
+            "on-tertiary-fixed-variant": "#005236",
+            "on-tertiary-container": "#005a3d",
+            "primary": "#8aebff",
+            "on-primary-fixed": "#001f25",
+            "tertiary-container": "#46d89d",
+            "on-primary-container": "#005763",
+            "on-primary-fixed-variant": "#004e5a",
+            "surface-container-high": "#232a39",
+            "background": "#0c1321",
+            "surface-container-low": "#151b2a",
+            "surface": "#0c1321",
+            "outline-variant": "#3c494c",
+            "on-surface-variant": "#bbc9cd",
+            "on-background": "#dce2f6",
+            "surface-container": "#19202e",
+            "on-secondary-container": "#002c47",
+            "primary-container": "#22d3ee",
+            "primary-fixed": "#a2eeff",
+            "surface-variant": "#2e3544",
+            "on-secondary-fixed": "#001d31",
+            "on-tertiary": "#003824",
+            "secondary-container": "#3198dc",
+            "primary-fixed-dim": "#2fd9f4",
+            "on-primary": "#00363e",
+            "inverse-on-surface": "#2a3040",
+            "secondary-fixed-dim": "#93ccff",
+            "tertiary-fixed": "#6ffbbe",
+            "on-error-container": "#ffdad6",
+            "on-surface": "#dce2f6",
+            "surface-container-lowest": "#070e1c",
+            "surface-container-highest": "#2e3544",
+            "tertiary": "#68f5b8",
+            "error": "#ffb4ab",
+            "inverse-primary": "#006877",
+            "surface-tint": "#2fd9f4",
+            "inverse-surface": "#dce2f6",
+            "secondary-fixed": "#cce5ff",
+            "on-secondary-fixed-variant": "#004b73"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "2rem",
+            "space-xl": "2.5rem",
+            "gutter": "1.5rem",
+            "space-md": "1rem",
+            "gutter-mobile": "1rem",
+            "space-xs": "0.25rem",
+            "margin-mobile": "1.25rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "body-sm": ["Inter"],
+            "display-mobile": ["Inter"],
+            "label-mono-lg": ["JetBrains Mono"],
+            "headline-lg": ["Inter"],
+            "headline-sm": ["Inter"],
+            "headline-lg-mobile": ["Inter"],
+            "body-lg": ["Inter"],
+            "body-md": ["Inter"],
+            "display": ["Inter"],
+            "headline-md": ["Inter"],
+            "label-mono-sm": ["JetBrains Mono"]
+          },
+          "fontSize": {
+            "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "display-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-mono-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "display": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "headline-md": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-mono-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Custom Circuit Dot Grid Pattern */
+    .bg-grid-dots {
+      background-image: radial-gradient(rgba(138, 235, 255, 0.08) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    /* Ambient Glow on focus & interactive cards */
+    .card-glow:hover {
+      box-shadow: 0 0 24px -4px rgba(34, 211, 238, 0.15);
+      border-color: rgba(34, 211, 238, 0.45);
+    }
+    details[open] summary .toggle-icon {
+      transform: rotate(180deg);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased bg-grid-dots min-h-screen selection:bg-primary-container selection:text-on-primary" id="beranda">
+<!-- ================= TOP NAVIGATION BAR ================= -->
+<header class="sticky top-0 z-50 w-full bg-surface/90 backdrop-blur-md border-b border-outline-variant/30">
+<div class="max-w-[1120px] mx-auto px-margin-mobile md:px-margin flex items-center justify-between h-16 w-full">
+<!-- Brand Logo / Identity -->
+<a aria-label="Owen Reza Beranda" class="flex items-center gap-2.5 focus:outline-none focus:ring-2 focus:ring-primary-container rounded-lg p-1" href="#beranda">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-tertiary"></span>
+</span>
+<span class="font-label-mono-lg text-label-mono-lg font-bold text-primary tracking-wide">
+          Owen Reza <span class="text-on-surface-variant font-normal">// EE.Lab</span>
+</span>
+</a>
+<!-- Desktop Navigation Links -->
+<nav aria-label="Navigasi Utama" class="hidden md:flex items-center gap-7">
+<a class="text-primary border-b-2 border-primary font-label-mono-sm text-label-mono-sm pb-1 transition-colors" href="#beranda">Beranda</a>
+<a class="text-on-surface-variant font-label-mono-sm text-label-mono-sm hover:text-primary transition-colors" href="#tentang">Tentang</a>
+<a class="text-on-surface-variant font-label-mono-sm text-label-mono-sm hover:text-primary transition-colors" href="#proyek">Konsep Proyek</a>
+<a class="text-on-surface-variant font-label-mono-sm text-label-mono-sm hover:text-primary transition-colors" href="#telemetri">Telemetri</a>
+<a class="text-on-surface-variant font-label-mono-sm text-label-mono-sm hover:text-primary transition-colors" href="#kontak">Kontak</a>
+</nav>
+<!-- Trailing Action -->
+<div class="flex items-center gap-3">
+<a class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-lg font-label-mono-sm text-label-mono-sm font-semibold bg-primary-container text-on-primary-container hover:bg-primary-fixed-dim transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-primary min-h-[44px]" href="#kontak">
+<span class="material-symbols-outlined text-[16px]">sensors</span>
+<span>Hubungi</span>
+</a>
+<!-- Mobile Quick Jump Toggle -->
+<a aria-label="Kirim Pesan" class="md:hidden flex items-center justify-center w-11 h-11 rounded-lg border border-outline-variant/50 text-primary hover:bg-surface-container focus:outline-none focus:ring-2 focus:ring-primary-container" href="#kontak">
+<span class="material-symbols-outlined text-[20px]">terminal</span>
+</a>
+</div>
+</div>
+</header>
+<main class="w-full">
+<!-- ================= HERO SECTION (2-COL) ================= -->
+<section class="relative pt-10 pb-16 md:pt-20 md:pb-24 border-b border-outline-variant/20 overflow-hidden">
+<!-- Circuit Trace Accent Line -->
+<div class="absolute left-1/2 -top-10 w-96 h-96 -translate-x-1/2 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="max-w-[1120px] mx-auto px-margin-mobile md:px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-gutter items-center">
+<!-- Kolom Kiri: Ringkasan & CTA -->
+<div class="lg:col-span-7 flex flex-col items-start">
+<!-- Badge Substrat -->
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-high border border-outline-variant/40 mb-5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-mono-sm text-label-mono-sm text-primary uppercase tracking-wider">
+                Mahasiswa Teknik Elektro
+              </span>
+<span class="text-outline-variant text-[10px]">|</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Konsentrasi Komputer &amp; Telekomunikasi</span>
+</div>
+<!-- Headline Utama -->
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background tracking-tight mb-4 font-bold">
+              Mengeksplorasi IoT dan <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Dashboard Monitoring</span>
+</h1>
+<!-- Deskripsi Sesuai Prompt -->
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-xl">
+              Halo, saya Owen Reza, mahasiswa Teknik Elektro dengan konsentrasi Teknik Komputer dan Telekomunikasi. Saya tertarik menghubungkan perangkat, jaringan, dan data melalui proyek sederhana.
+            </p>
+<!-- CTA Buttons -->
+<div class="flex flex-wrap items-center gap-4 w-full sm:w-auto">
+<!-- Tombol Utama: #22D3EE text-[#0B1220] -->
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-label-mono-lg text-label-mono-lg font-semibold bg-[#22D3EE] text-[#0B1220] hover:bg-[#38BDF8] transition-all duration-150 shadow-[0_0_16px_rgba(34,211,238,0.25)] hover:shadow-[0_0_24px_rgba(34,211,238,0.4)] focus:outline-none focus:ring-2 focus:ring-primary min-h-[44px]" href="#proyek">
+<span>Lihat Konsep Proyek</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<!-- Tombol Sekunder Outline -->
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-label-mono-lg text-label-mono-lg font-semibold border border-primary-container/40 text-primary hover:bg-primary-container/10 hover:border-primary-container transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-primary-container min-h-[44px]" href="#kontak">
+<span>Hubungi Saya</span>
+<span class="material-symbols-outlined text-[18px]">send</span>
+</a>
+</div>
+<!-- Micro Metrics Tag -->
+<div class="mt-8 pt-6 border-t border-outline-variant/30 flex items-center gap-6 text-on-surface-variant font-label-mono-sm text-label-mono-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[16px]">school</span>
+<span>Universitas Musamus Merauke</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[16px]">memory</span>
+<span>Hardware Interfacing Lab</span>
+</div>
+</div>
+</div>
+<!-- Kolom Kanan: Mini Dashboard Telemetri "Monitoring Ruangan" -->
+<div class="lg:col-span-5 w-full" id="telemetri">
+<div class="relative bg-surface-container rounded-2xl border border-primary-container/30 p-5 md:p-6 shadow-2xl transition-all duration-200 card-glow">
+<!-- Circuit Card Corner Accents -->
+<div class="absolute -top-1.5 -left-1.5 w-3 h-3 border-t-2 border-l-2 border-primary"></div>
+<div class="absolute -top-1.5 -right-1.5 w-3 h-3 border-t-2 border-r-2 border-primary"></div>
+<div class="absolute -bottom-1.5 -left-1.5 w-3 h-3 border-b-2 border-l-2 border-primary"></div>
+<div class="absolute -bottom-1.5 -right-1.5 w-3 h-3 border-b-2 border-r-2 border-primary"></div>
+<!-- Header Card Dashboard -->
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/30">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px]">nest_multi_room</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-background font-semibold">Monitoring Ruangan</h2>
+<p class="font-label-mono-sm text-label-mono-sm text-outline">NODE_ID: LAB-MERAUKE-01</p>
+</div>
+</div>
+<!-- Badge Permanen: Data simulasi -->
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-label-mono-sm font-semibold bg-cyan-950/80 text-cyan-400 border border-cyan-500/30">
+                  Data simulasi
+                </span>
+</div>
+<!-- Realtime Value Metrics -->
+<div class="grid grid-cols-2 gap-3 my-5">
+<!-- Metrik Suhu -->
+<div class="bg-surface-container-low rounded-xl p-3.5 border border-outline-variant/30">
+<div class="flex items-center justify-between mb-1 text-on-surface-variant font-label-mono-sm text-label-mono-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[16px]">thermostat</span>
+                      Suhu
+                    </span>
+<span class="text-[10px] text-outline">DHT22</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md font-bold text-on-background" id="temp-val">28,4</span>
+<span class="font-label-mono-lg text-label-mono-lg text-primary">°C</span>
+</div>
+<div class="text-[10px] text-outline-variant mt-1 font-label-mono-sm">Status: Optimal</div>
+</div>
+<!-- Metrik Kelembapan -->
+<div class="bg-surface-container-low rounded-xl p-3.5 border border-outline-variant/30">
+<div class="flex items-center justify-between mb-1 text-on-surface-variant font-label-mono-sm text-label-mono-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-[16px]">humidity_percentage</span>
+                      Kelembapan
+                    </span>
+<span class="text-[10px] text-outline">RH%</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md font-bold text-on-background" id="hum-val">67</span>
+<span class="font-label-mono-lg text-label-mono-lg text-secondary">%</span>
+</div>
+<div class="text-[10px] text-outline-variant mt-1 font-label-mono-sm">Normal range</div>
+</div>
+</div>
+<!-- Sparkline Visual Area Chart (SVG) -->
+<div class="bg-surface-container-low/70 rounded-xl p-4 border border-outline-variant/30 mb-4">
+<div class="flex justify-between items-center mb-2 font-label-mono-sm text-label-mono-sm text-on-surface-variant">
+<span>Grafik Suhu Relatif</span>
+<span class="text-primary font-mono text-[10px]" id="timestamp-val">T-Stamp: 14:32:05 WIT</span>
+</div>
+<!-- SVG Area & Line Chart -->
+<div class="w-full h-24 relative overflow-hidden">
+<svg class="w-full h-full" id="sparkline-svg" preserveaspectratio="none" viewbox="0 0 280 80">
+<defs>
+<lineargradient id="cyan-gradient" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#22D3EE" stop-opacity="0.45"></stop>
+<stop offset="100%" stop-color="#22D3EE" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- Area Fill -->
+<polygon fill="url(#cyan-gradient)" id="spark-polygon" points="0,80 0,45 40,38 80,48 120,40 160,35 200,42 240,32 280,36 280,80"></polygon>
+<!-- Line Stroke -->
+<polyline fill="none" id="spark-polyline" points="0,45 40,38 80,48 120,40 160,35 200,42 240,32 280,36" stroke="#22D3EE" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></polyline>
+<!-- Target tip pulsing -->
+<circle class="animate-ping" cx="280" cy="36" fill="#22D3EE" id="spark-tip" r="3.5"></circle>
+<circle cx="280" cy="36" fill="#F3F7FC" r="3"></circle>
+</svg>
+</div>
+<!-- Ringkasan Tekstual Grafik Sesuai Prompt -->
+<p class="mt-2.5 font-label-mono-sm text-label-mono-sm text-on-surface-variant" id="chart-summary">
+                  Tren 12 jam: stabil pada rentang 27.8°C - 28.9°C
+                </p>
+</div>
+<!-- Interactive Controls (Ganti Sampel) -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-2">
+<button class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-surface-container-high hover:bg-surface-variant border border-primary-container/40 text-primary font-label-mono-sm text-label-mono-sm font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-primary min-h-[44px]" id="btn-sample-cycle" type="button">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+<span>Ganti sampel</span>
+</button>
+<div class="text-right flex flex-col justify-center">
+<span class="font-label-mono-sm text-label-mono-sm text-primary font-semibold" id="sample-index-label">
+                    Sampel 1 dari 7 (Lab Kampus)
+                  </span>
+<span class="font-label-mono-sm text-[10px] text-outline">Protokol: Virtual MQTT / ESP32</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= BAGIAN TENTANG SAYA ================= -->
+<section class="py-16 md:py-24 border-b border-outline-variant/20" id="tentang">
+<div class="max-w-[1120px] mx-auto px-margin-mobile md:px-margin">
+<!-- Section Header -->
+<div class="max-w-2xl mb-12">
+<div class="flex items-center gap-2 font-label-mono-sm text-label-mono-sm text-primary uppercase tracking-widest mb-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span>Profil Akademik &amp; Eksplorasi</span>
+</div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold text-on-background">
+            Tentang Saya
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4 leading-relaxed">
+            Menempuh pendidikan sarjana di <strong class="text-on-background">[UNIVERSITAS MUSAMUS MERAUKE]</strong>. Sebagai pembelajar yang antusias terhadap <em class="text-primary not-italic">vibe coding</em>, saya mendedikasikan waktu luang untuk mempelajari otomasi perangkat keras, telemetri nirkabel, dan rekayasa data ringan yang dapat diakses secara transparan via antarmuka peramban modern.
+          </p>
+</div>
+<!-- 3 Kartu Fokus Eksplorasi (Grid 3 Kolom) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+<!-- Kartu 1: Perangkat dan Sensor -->
+<div class="bg-surface-container rounded-2xl border border-primary-container/20 p-6 flex flex-col justify-between card-glow transition-all">
+<div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-high border border-outline-variant/30 flex items-center justify-center text-primary mb-5">
+<span class="material-symbols-outlined text-[26px]">memory</span>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">[SYS_FOCUS: 01]</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-background mt-1 mb-2">
+                Perangkat dan Sensor
+              </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Interfacing mikrokontroler (ESP32/Arduino), pembacaan analog &amp; digital sensor suhu, kelembapan lingkungan, modul arus listrik, dan kalibrasi sinyal dasar.
+              </p>
+</div>
+<div class="pt-5 mt-5 border-t border-outline-variant/30 font-label-mono-sm text-label-mono-sm text-primary flex items-center gap-1.5">
+<span>GPIO • I2C • ADC</span>
+</div>
+</div>
+<!-- Kartu 2: Jaringan dan Telekomunikasi -->
+<div class="bg-surface-container rounded-2xl border border-primary-container/20 p-6 flex flex-col justify-between card-glow transition-all">
+<div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-high border border-outline-variant/30 flex items-center justify-center text-primary mb-5">
+<span class="material-symbols-outlined text-[26px]">cell_tower</span>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">[SYS_FOCUS: 02]</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-background mt-1 mb-2">
+                Jaringan dan Telekomunikasi
+              </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Penerapan protokol ringan IoT, mekanisme MQTT publish/subscribe via broker publik/lokal, transmisi paket data nirkabel melalui kanal Wi-Fi hingga topologi LoRa point-to-point.
+              </p>
+</div>
+<div class="pt-5 mt-5 border-t border-outline-variant/30 font-label-mono-sm text-label-mono-sm text-primary flex items-center gap-1.5">
+<span>MQTT • Wi-Fi • LoRa 868MHz</span>
+</div>
+</div>
+<!-- Kartu 3: Visualisasi Data -->
+<div class="bg-surface-container rounded-2xl border border-primary-container/20 p-6 flex flex-col justify-between card-glow transition-all">
+<div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-high border border-outline-variant/30 flex items-center justify-center text-primary mb-5">
+<span class="material-symbols-outlined text-[26px]">monitoring</span>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">[SYS_FOCUS: 03]</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-background mt-1 mb-2">
+                Visualisasi Data
+              </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Pembuatan dashboard web responsif, antarmuka telemetri real-time dengan update dinamis, representasi visual tren grafis, serta monitoring kesehatan simpul node secara terstruktur.
+              </p>
+</div>
+<div class="pt-5 mt-5 border-t border-outline-variant/30 font-label-mono-sm text-label-mono-sm text-primary flex items-center gap-1.5">
+<span>Web Dashboard • Sparklines • UI/UX</span>
+</div>
+</div>
+</div>
+<!-- Tagar Teknologi yang Ingin Dieksplorasi -->
+<div class="bg-surface-container-low rounded-2xl p-6 border border-outline-variant/30">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<h4 class="font-label-mono-lg text-label-mono-lg font-semibold text-on-background">
+                Teknologi yang ingin dieksplorasi:
+              </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Ekosistem perkakas perangkat keras, protokol transmisi data, dan antarmuka web.
+              </p>
+</div>
+<!-- Pill Badges Sesuai Instruksi -->
+<div class="flex flex-wrap items-center gap-2">
+<span class="px-3 py-1 rounded-full text-label-mono-sm font-label-mono-sm bg-primary-container/10 text-primary border border-primary-container/30">ESP32</span>
+<span class="px-3 py-1 rounded-full text-label-mono-sm font-label-mono-sm bg-primary-container/10 text-primary border border-primary-container/30">MQTT</span>
+<span class="px-3 py-1 rounded-full text-label-mono-sm font-label-mono-sm bg-primary-container/10 text-primary border border-primary-container/30">HTML</span>
+<span class="px-3 py-1 rounded-full text-label-mono-sm font-label-mono-sm bg-primary-container/10 text-primary border border-primary-container/30">CSS</span>
+<span class="px-3 py-1 rounded-full text-label-mono-sm font-label-mono-sm bg-primary-container/10 text-primary border border-primary-container/30">JavaScript</span>
+<span class="px-3 py-1 rounded-full text-label-mono-sm font-label-mono-sm bg-primary-container/10 text-primary border border-primary-container/30">WebSockets</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= BAGIAN PROYEK ================= -->
+<section class="py-16 md:py-24 border-b border-outline-variant/20" id="proyek">
+<div class="max-w-[1120px] mx-auto px-margin-mobile md:px-margin">
+<!-- Header Proyek -->
+<div class="max-w-2xl mb-12">
+<div class="flex items-center gap-2 font-label-mono-sm text-label-mono-sm text-primary uppercase tracking-widest mb-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span>Roadmap &amp; Arsitektur Sistem</span>
+</div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold text-on-background">
+            Konsep Proyek yang Ingin Saya Bangun
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-3">
+            Inisiatif rancangan konseptual berbasis riset mandiri dan kajian perkuliahan elektro, disiapkan untuk tahap implementasi purwarupa perangkat keras.
+          </p>
+</div>
+<!-- 3 Kartu Konsep Proyek -->
+<div class="space-y-6">
+<!-- Kartu 1: Monitoring Suhu dan Kelembapan -->
+<div class="bg-surface-container rounded-2xl border border-primary-container/20 p-6 md:p-8 card-glow transition-all">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-outline-variant/30">
+<div class="flex items-start md:items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[28px] mt-0.5 md:mt-0">device_thermostat</span>
+<div>
+<div class="flex items-center gap-2.5">
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-background">
+                      Monitoring Suhu dan Kelembapan
+                    </h3>
+<span class="px-2.5 py-0.5 rounded-full text-[11px] font-label-mono-sm font-medium bg-primary-container/10 text-primary border border-primary-container/30">
+                      Konsep
+                    </span>
+</div>
+<p class="font-label-mono-sm text-label-mono-sm text-outline mt-0.5">[ID: PRJ-ENV-01] • Lingkungan Ruang Server / Lab Komputasi</p>
+</div>
+</div>
+<!-- Rencana Teknologi Tag -->
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="px-2.5 py-1 rounded text-[11px] font-label-mono-sm bg-surface-container-low text-on-surface-variant border border-outline-variant/30">ESP32</span>
+<span class="px-2.5 py-1 rounded text-[11px] font-label-mono-sm bg-surface-container-low text-on-surface-variant border border-outline-variant/30">DHT22</span>
+<span class="px-2.5 py-1 rounded text-[11px] font-label-mono-sm bg-surface-container-low text-on-surface-variant border border-outline-variant/30">MQTT</span>
+<span class="px-2.5 py-1 rounded text-[11px] font-label-mono-sm bg-surface-container-low text-on-surface-variant border border-outline-variant/30">Web Dashboard</span>
+</div>
+</div>
+<!-- Deskripsi Singkat Tantangan -->
+<p class="font-body-md text-body-md text-on-surface-variant my-4">
+<strong class="text-on-background">Tantangan:</strong> Fluktuasi termal dan kelembapan ekstrem pada rak server kampus yang berisiko memperpendek umur pakai perangkat komputasi jika tidak terdeteksi sejak dini.
+            </p>
+<!-- Expandable Accordion: Masalah, Solusi, Langkah Awal -->
+<details class="group mt-2 border border-outline-variant/30 rounded-xl bg-surface-container-low overflow-hidden">
+<summary class="flex items-center justify-between p-4 cursor-pointer select-none text-primary font-label-mono-sm text-label-mono-sm font-semibold focus:outline-none focus:ring-2 focus:ring-primary-container">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+<span>Lihat konsep detail</span>
+</span>
+<span class="material-symbols-outlined text-[18px] transition-transform duration-200 toggle-icon">expand_more</span>
+</summary>
+<div class="p-4 pt-1 border-t border-outline-variant/20 space-y-3 font-body-sm text-body-sm text-on-surface-variant">
+<div>
+<span class="text-on-background font-semibold font-label-mono-sm block text-primary">&gt; Masalah:</span>
+                  Pengecekan temperatur manual berkala rentan kelalaian human error dan tidak menyajikan riwayat historis saat terjadi lonjakan mendadak pada malam hari.
+                </div>
+<div>
+<span class="text-on-background font-semibold font-label-mono-sm block text-primary">&gt; Rencana Solusi:</span>
+                  Pemasangan simpul sensor DHT22 terhubung mikrokontroler ESP32 bertenaga baterai dengan mode deep-sleep, mempublikasikan paket payload JSON berkala via broker MQTT menuju dashboard web ringan.
+                </div>
+<div>
+<span class="text-on-background font-semibold font-label-mono-sm block text-primary">&gt; Langkah Awal:</span>
+                  1. Pembuatan breadboard circuit test DHT22 + ESP32. 2. Kalibrasi offset sensor dengan termometer acuan. 3. Uji coba pengiriman topik MQTT di jaringan intranet lokal.
+                </div>
+</div>
+</details>
+</div>
+<!-- Kartu 2: Monitoring Konsumsi Energi -->
+<div class="bg-surface-container rounded-2xl border border-primary-container/20 p-6 md:p-8 card-glow transition-all">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-outline-variant/30">
+<div class="flex items-start md:items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[28px] mt-0.5 md:mt-0">bolt</span>
+<div>
+<div class="flex items-center gap-2.5">
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-background">
+                      Monitoring Konsumsi Energi
+                    </h3>
+<span class="px-2.5 py-0.5 rounded-full text-[11px] font-label-mono-sm font-medium bg-primary-container/10 text-primary border border-primary-container/30">
+                      Konsep
+                    </span>
+</div>
+<p class="font-label-mono-sm text-label-mono-sm text-outline mt-0.5">[ID: PRJ-PWR-02] • Pemantauan Beban Daya &amp; Efisiensi Listrik</p>
+</div>
+</div>
+<!-- Rencana Teknologi Tag -->
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="px-2.5 py-1 rounded text-[11px] font-label-mono-sm bg-surface-container-low text-on-surface-variant border border-outline-variant/30">ESP32</span>
+<span class="px-2.5 py-1 rounded text-[11px] font-label-mono-sm bg-surface-container-low text-on-surface-variant border border-outline-variant/30">Sensor PZEM-004T</span>
+<span class="px-2.5 py-1 rounded text-[11px] font-label-mono-sm bg-surface-container-low text-on-surface-variant border border-outline-variant/30">Modbus/TTL</span>
+<span class="px-2.5 py-1 rounded text-[11px] font-label-mono-sm bg-surface-container-low text-on-surface-variant border border-outline-variant/30">Web Dashboard</span>
+</div>
+</div>
+<!-- Deskripsi Singkat Tantangan -->
+<p class="font-body-md text-body-md text-on-surface-variant my-4">
+<strong class="text-on-background">Tantangan:</strong> Tingginya pemborosan energi pada workstation lab praktikum akibat perangkat periferal yang tetap berada pada mode siaga (standby) saat jam operasional usai.
+            </p>
+<!-- Expandable Accordion: Masalah, Solusi, Langkah Awal -->
+<details class="group mt-2 border border-outline-variant/30 rounded-xl bg-surface-container-low overflow-hidden">
+<summary class="flex items-center justify-between p-4 cursor-pointer select-none text-primary font-label-mono-sm text-label-mono-sm font-semibold focus:outline-none focus:ring-2 focus:ring-primary-container">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+<span>Lihat konsep detail</span>
+</span>
+<span class="material-symbols-outlined text-[18px] transition-transform duration-200 toggle-icon">expand_more</span>
+</summary>
+<div class="p-4 pt-1 border-t border-outline-variant/20 space-y-3 font-body-sm text-body-sm text-on-surface-variant">
+<div>
+<span class="text-on-background font-semibold font-label-mono-sm block text-primary">&gt; Masalah:</span>
+                  Kurangnya visibilitas data konsumsi Watt, tegangan drop, dan akumulasi kWh secara riil pada masing-masing meja kerja praktikum elektronika.
+                </div>
+<div>
+<span class="text-on-background font-semibold font-label-mono-sm block text-primary">&gt; Rencana Solusi:</span>
+                  Mengintegrasikan modul sensor tegangan/arus PZEM-004T non-intrusif dengan mikrokontroler untuk mengalkulasi faktor daya secara berkala serta mengirimkan sinyal telemetri beban berlebih.
+                </div>
+<div>
+<span class="text-on-background font-semibold font-label-mono-sm block text-primary">&gt; Langkah Awal:</span>
+                  1. Perancangan skema isolasi optocoupler demi keselamatan arus bolak-balik (AC). 2. Penulisan parser UART PZEM di ESP32. 3. Perancangan UI indikator gauge beban daya di peramban.
+                </div>
+</div>
+</details>
+</div>
+<!-- Kartu 3: Monitoring Kualitas Jaringan -->
+<div class="bg-surface-container rounded-2xl border border-primary-container/20 p-6 md:p-8 card-glow transition-all">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-outline-variant/30">
+<div class="flex items-start md:items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[28px] mt-0.5 md:mt-0">network_check</span>
+<div>
+<div class="flex items-center gap-2.5">
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-background">
+                      Monitoring Kualitas Jaringan
+                    </h3>
+<span class="px-2.5 py-0.5 rounded-full text-[11px] font-label-mono-sm font-medium bg-primary-container/10 text-primary border border-primary-container/30">
+                      Konsep
+                    </span>
+</div>
+<p class="font-label-mono-sm text-label-mono-sm text-outline mt-0.5">[ID: PRJ-NET-03] • Analisis Latensi &amp; Packet Loss Nirkabel</p>
+</div>
+</div>
+<!-- Rencana Teknologi Tag -->
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="px-2.5 py-1 rounded text-[11px] font-label-mono-sm bg-surface-container-low text-on-surface-variant border border-outline-variant/30">ESP32 Ping</span>
+<span class="px-2.5 py-1 rounded text-[11px] font-label-mono-sm bg-surface-container-low text-on-surface-variant border border-outline-variant/30">Wi-Fi RSSI</span>
+<span class="px-2.5 py-1 rounded text-[11px] font-label-mono-sm bg-surface-container-low text-on-surface-variant border border-outline-variant/30">WebSockets</span>
+<span class="px-2.5 py-1 rounded text-[11px] font-label-mono-sm bg-surface-container-low text-on-surface-variant border border-outline-variant/30">Web Dashboard</span>
+</div>
+</div>
+<!-- Deskripsi Singkat Tantangan -->
+<p class="font-body-md text-body-md text-on-surface-variant my-4">
+<strong class="text-on-background">Tantangan:</strong> Fluktuasi koneksi Wi-Fi kampus di sudut-sudut gedung laboratorium yang kerap terputus tanpa rekaman diagnostik waktu nyata untuk penanganan tim IT.
+            </p>
+<!-- Expandable Accordion: Masalah, Solusi, Langkah Awal -->
+<details class="group mt-2 border border-outline-variant/30 rounded-xl bg-surface-container-low overflow-hidden">
+<summary class="flex items-center justify-between p-4 cursor-pointer select-none text-primary font-label-mono-sm text-label-mono-sm font-semibold focus:outline-none focus:ring-2 focus:ring-primary-container">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+<span>Lihat konsep detail</span>
+</span>
+<span class="material-symbols-outlined text-[18px] transition-transform duration-200 toggle-icon">expand_more</span>
+</summary>
+<div class="p-4 pt-1 border-t border-outline-variant/20 space-y-3 font-body-sm text-body-sm text-on-surface-variant">
+<div>
+<span class="text-on-background font-semibold font-label-mono-sm block text-primary">&gt; Masalah:</span>
+                  Keluhan pengguna mengenai internet lambat sulit dianalisis jika tidak ada sensor ujung (endpoint tester) yang terus memantau metrik jitter, RTT, dan level desibel (RSSI).
+                </div>
+<div>
+<span class="text-on-background font-semibold font-label-mono-sm block text-primary">&gt; Rencana Solusi:</span>
+                  Sebuah node portabel berbasis ESP32 yang mengirimkan paket uji ICMP secara berkala ke gateway lokal dan DNS publik, lalu memetakan respons latensi secara instan melalui kanal WebSockets.
+                </div>
+<div>
+<span class="text-on-background font-semibold font-label-mono-sm block text-primary">&gt; Langkah Awal:</span>
+                  1. Implementasi library ESP32 Ping asinkron. 2. Pengukuran akurasi scan Wi-Fi beacon dBm. 3. Pembuatan tampilan scatter plot latensi real-time di antarmuka HTML/CSS.
+                </div>
+</div>
+</details>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= BAGIAN KONTAK ================= -->
+<section class="py-16 md:py-24" id="kontak">
+<div class="max-w-[1120px] mx-auto px-margin-mobile md:px-margin">
+<!-- Kartu Banner Bersih #111C2E -->
+<div class="bg-surface-container rounded-2xl border border-primary-container/30 p-8 md:p-12 relative overflow-hidden card-glow">
+<!-- Circuit Hairline Background Accent -->
+<div class="absolute -right-16 -bottom-16 w-64 h-64 border border-primary/10 rounded-full pointer-events-none"></div>
+<div class="absolute -right-8 -bottom-8 w-48 h-48 border border-primary/20 rounded-full pointer-events-none"></div>
+<div class="max-w-2xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high border border-outline-variant/40 mb-4">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-label-mono-sm text-label-mono-sm text-primary uppercase">Koneksi &amp; Kolaborasi</span>
+</div>
+<!-- Judul Kontak Sesuai Prompt -->
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold text-on-background mb-4">
+              Mari Belajar dan Berkolaborasi
+            </h2>
+<!-- Ajakan Ramah Sesuai Prompt -->
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 leading-relaxed">
+              Saya selalu terbuka untuk berdiskusi, bertukar ide seputar implementasi Internet of Things, telekomunikasi, pemrograman mikrokontroler, maupun peluang belajar dan proyek eksplorasi bersama.
+            </p>
+<!-- Card Email & Action -->
+<div class="bg-surface-container-low rounded-xl p-5 border border-outline-variant/30 mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high border border-outline-variant/40 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</div>
+<div>
+<span class="font-label-mono-sm text-label-mono-sm text-outline block">Surat Elektronik Langsung:</span>
+<span class="font-label-mono-lg text-label-mono-lg font-semibold text-on-background select-all" id="email-text">
+                    owenrezasyaputra@gmail.com
+                  </span>
+</div>
+</div>
+<!-- Action Buttons: Kirim / Salin -->
+<div class="flex items-center gap-2">
+<a class="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg bg-primary-container text-on-primary-container font-label-mono-sm text-label-mono-sm font-semibold hover:bg-primary-fixed-dim transition-colors focus:outline-none focus:ring-2 focus:ring-primary min-h-[44px]" href="mailto:owenrezasyaputra@gmail.com">
+<span class="material-symbols-outlined text-[16px]">send</span>
+<span>Kirim Pesan</span>
+</a>
+<button class="inline-flex items-center justify-center px-3.5 py-2.5 rounded-lg bg-surface-container-high border border-outline-variant/40 text-on-surface hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary-container min-h-[44px]" id="btn-copy-email" title="Salin Email" type="button">
+<span class="material-symbols-outlined text-[18px]" id="copy-icon">content_copy</span>
+<span class="sr-only">Salin Alamat Email</span>
+</button>
+</div>
+</div>
+<!-- Tautan Profil Eksternal Sesuai Instruksi -->
+<div class="pt-4 border-t border-outline-variant/20">
+<div class="flex flex-wrap items-center gap-4">
+<!-- GitHub -->
+<a class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-surface-container-low border border-outline-variant/40 text-on-surface hover:text-primary hover:border-primary-container/50 transition-colors font-label-mono-sm text-label-mono-sm min-h-[44px] focus:outline-none focus:ring-2 focus:ring-primary-container" href="https://github.com" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+<span>GitHub Profil</span>
+<span class="material-symbols-outlined text-[14px] text-outline">arrow_outward</span>
+</a>
+<!-- LinkedIn -->
+<a class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-surface-container-low border border-outline-variant/40 text-on-surface hover:text-primary hover:border-primary-container/50 transition-colors font-label-mono-sm text-label-mono-sm min-h-[44px] focus:outline-none focus:ring-2 focus:ring-primary-container" href="https://linkedin.com" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px]">hub</span>
+<span>LinkedIn Profil</span>
+<span class="material-symbols-outlined text-[14px] text-outline">arrow_outward</span>
+</a>
+</div>
+<!-- Catatan Placeholder Sesuai Prompt -->
+<p class="font-label-mono-sm text-[11px] text-outline mt-3">
+                [Tandai: sesuaikan URL akun profil sebelum publikasi]
+              </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- ================= FOOTER ================= -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant/20 py-8">
+<div class="max-w-[1120px] mx-auto px-margin-mobile md:px-margin flex flex-col md:flex-row justify-between items-center gap-4 w-full">
+<!-- Footer Copyright Identity -->
+<div class="font-label-mono-sm text-label-mono-sm text-on-surface-variant text-center md:text-left">
+        © 2025 Owen Reza — Universitas Musamus Merauke. Konsentrasi Teknik Komputer &amp; Telekomunikasi.
+      </div>
+<!-- Links & Pintasan Kembali Ke Atas -->
+<div class="flex items-center gap-6 font-label-mono-sm text-label-mono-sm">
+<a class="inline-flex items-center gap-1.5 text-primary hover:underline focus:outline-none focus:ring-2 focus:ring-primary-container p-1 rounded" href="#beranda">
+<span class="material-symbols-outlined text-[16px]">arrow_upward</span>
+<span>Kembali ke atas</span>
+</a>
+</div>
+</div>
+</footer>
+<!-- ================= VANILLA JAVASCRIPT: LOGIKA GANTI SAMPEL & COPY ================= -->
+<script>
+    // 7 Kumpulan Sampel Telemetri Tetap Sesuai Prompt
+    const telemetrySamples = [
+      {
+        temp: "28,4",
+        hum: "67",
+        pointsPoly: "0,80 0,45 40,38 80,48 120,40 160,35 200,42 240,32 280,36 280,80",
+        pointsLine: "0,45 40,38 80,48 120,40 160,35 200,42 240,32 280,36",
+        tipY: 36,
+        summary: "Tren 12 jam: stabil pada rentang 27.8°C - 28.9°C",
+        label: "Sampel 1 dari 7 (Lab Kampus)",
+        tstamp: "14:32:05 WIT"
+      },
+      {
+        temp: "29,1",
+        hum: "64",
+        pointsPoly: "0,80 0,40 40,35 80,30 120,28 160,26 200,24 240,22 280,20 280,80",
+        pointsLine: "0,40 40,35 80,30 120,28 160,26 200,24 240,22 280,20",
+        tipY: 20,
+        summary: "Tren 12 jam: peningkatan suhu siang hari, kelembapan menurun bertahap",
+        label: "Sampel 2 dari 7 (Lab Komputer 2)",
+        tstamp: "15:05:12 WIT"
+      },
+      {
+        temp: "27,8",
+        hum: "70",
+        pointsPoly: "0,80 0,35 40,42 80,45 120,50 160,54 200,52 240,55 280,58 280,80",
+        pointsLine: "0,35 40,42 80,45 120,50 160,54 200,52 240,55 280,58",
+        tipY: 58,
+        summary: "Tren 12 jam: penurunan suhu pasca hujan lokal, RH mengalami saturasi ringan",
+        label: "Sampel 3 dari 7 (Ruang Server)",
+        tstamp: "16:20:44 WIT"
+      },
+      {
+        temp: "28,0",
+        hum: "68",
+        pointsPoly: "0,80 0,48 40,46 80,45 120,44 160,45 200,43 240,44 280,45 280,80",
+        pointsLine: "0,48 40,46 80,45 120,44 160,45 200,43 240,44 280,45",
+        tipY: 45,
+        summary: "Tren 12 jam: deviasi statis, sirkulasi pendingin ruangan bekerja efektif",
+        label: "Sampel 4 dari 7 (Lab Telekomunikasi)",
+        tstamp: "17:45:10 WIT"
+      },
+      {
+        temp: "29,5",
+        hum: "62",
+        pointsPoly: "0,80 0,50 40,45 80,38 120,32 160,25 200,20 240,16 280,14 280,80",
+        pointsLine: "0,50 40,45 80,38 120,32 160,25 200,20 240,16 280,14",
+        tipY: 14,
+        summary: "Tren 12 jam: lonjakan termal akibat beban kerja simulasi komputasi tinggi",
+        label: "Sampel 5 dari 7 (Workshop IoT)",
+        tstamp: "18:12:30 WIT"
+      },
+      {
+        temp: "28,7",
+        hum: "65",
+        pointsPoly: "0,80 0,20 40,25 80,30 120,36 160,34 200,35 240,32 280,30 280,80",
+        pointsLine: "0,20 40,25 80,30 120,36 160,34 200,35 240,32 280,30",
+        tipY: 30,
+        summary: "Tren 12 jam: normalisasi suhu bertahap setelah pendinginan tambahan",
+        label: "Sampel 6 dari 7 (Meja Riset Sinyal)",
+        tstamp: "19:30:18 WIT"
+      },
+      {
+        temp: "28,2",
+        hum: "66",
+        pointsPoly: "0,80 0,42 40,40 80,44 120,42 160,39 200,41 240,39 280,40 280,80",
+        pointsLine: "0,42 40,40 80,44 120,42 160,39 200,41 240,39 280,40",
+        tipY: 40,
+        summary: "Tren 12 jam: kondisi nominal terjaga, pembacaan ADC sensor terverifikasi linier",
+        label: "Sampel 7 dari 7 (Uji Coba Lapangan)",
+        tstamp: "20:15:00 WIT"
+      }
+    ];
+
+    let currentSampleIndex = 0;
+
+    const tempValEl = document.getElementById("temp-val");
+    const humValEl = document.getElementById("hum-val");
+    const chartSummaryEl = document.getElementById("chart-summary");
+    const sampleIndexLabelEl = document.getElementById("sample-index-label");
+    const timestampValEl = document.getElementById("timestamp-val");
+    const sparkPolyEl = document.getElementById("spark-polygon");
+    const sparkLineEl = document.getElementById("spark-polyline");
+    const sparkTipEl = document.getElementById("spark-tip");
+    const btnCycle = document.getElementById("btn-sample-cycle");
+
+    function renderSample(index) {
+      const data = telemetrySamples[index];
+      
+      // Update Nilai Numerik
+      tempValEl.textContent = data.temp;
+      humValEl.textContent = data.hum;
+      chartSummaryEl.textContent = data.summary;
+      sampleIndexLabelEl.textContent = data.label;
+      timestampValEl.textContent = "T-Stamp: " + data.tstamp;
+
+      // Update Geometri SVG
+      sparkPolyEl.setAttribute("points", data.pointsPoly);
+      sparkLineEl.setAttribute("points", data.pointsLine);
+      sparkTipEl.setAttribute("cy", data.tipY);
+    }
+
+    if (btnCycle) {
+      btnCycle.addEventListener("click", () => {
+        currentSampleIndex = (currentSampleIndex + 1) % telemetrySamples.length;
+        renderSample(currentSampleIndex);
+      });
+    }
+
+    // Fitur Salin Email Ringkas
+    const btnCopyEmail = document.getElementById("btn-copy-email");
+    const copyIcon = document.getElementById("copy-icon");
+
+    if (btnCopyEmail) {
+      btnCopyEmail.addEventListener("click", () => {
+        const email = "owenrezasyaputra@gmail.com";
+        navigator.clipboard.writeText(email).then(() => {
+          copyIcon.textContent = "done";
+          setTimeout(() => {
+            copyIcon.textContent = "content_copy";
+          }, 2000);
+        }).catch(() => {
+          // Fallback sederhana jika izin clipboard dibatasi
+          alert("Alamat email: " + email);
+        });
+      });
+    }
+  </script>
+</body></html>
